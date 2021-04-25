@@ -197,7 +197,32 @@ func panic_examples() {
 			fmt.Println("Error", err)
 		}
 	}()
-	panic("Something bad happened")
+	b := 1 / 0
+	fmt.Println(b)
+}
+
+func pointer_examples() {
+	var a int = 32
+	var b *int = &a
+	fmt.Println(a, &a, b, *b)
+	a = 25
+	fmt.Println(*b, a)
+	*b = 24
+	fmt.Println(*b, a)
+
+	i := []int{1, 2, 3}
+	j := &i[0]
+	k := &i[1]
+	fmt.Println(i, j, k, *j, *k)
+
+	type my_struct struct {
+		a int
+	}
+
+	var x *my_struct = &my_struct{a: 1}
+	x.a = 2
+	(*x).a = 3
+	fmt.Println(x, *x, (*x).a, x.a)
 }
 
 func main() {
@@ -207,5 +232,6 @@ func main() {
 	// loops()
 	// maps_structs()
 	// defer_examples()
-	panic_examples()
+	// panic_examples()
+	pointer_examples()
 }
