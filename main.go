@@ -176,10 +176,36 @@ Loop:
 	}
 }
 
+func defer_examples() {
+	defer fmt.Println("One")
+	defer fmt.Println("Two")
+	fmt.Println("Three")
+
+	a := "a"
+	defer fmt.Println(a)
+	a = "b"
+
+	b := map[int]string{1: "One", 2: "Two", 3: "Three"}
+	defer fmt.Println(b)
+	b[1] = "Two"
+}
+
+func panic_examples() {
+	fmt.Println("about to panic")
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("Error", err)
+		}
+	}()
+	panic("Something bad happened")
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
 	// switch_statements()
 	// loops()
 	// maps_structs()
+	// defer_examples()
+	panic_examples()
 }
