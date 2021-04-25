@@ -404,6 +404,28 @@ func incrementer() {
 	wg1.Done()
 }
 
+var wg3 = sync.WaitGroup{}
+
+func channels_examples() {
+	ch := make(chan int)
+	wg3.Add(2)
+	go func(ch <-chan int) {
+		for i := range ch {
+			fmt.Println(i)
+		}
+		wg3.Done()
+	}(ch)
+
+	go func(ch chan<- int) {
+		ch <- 42
+		ch <- 22
+		close(ch)
+		wg3.Done()
+	}(ch)
+
+	wg3.Wait()
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
@@ -416,5 +438,6 @@ func main() {
 	// function_examples()
 	// interface_examples()
 	// goroutines_examples_1()
-	goroutines_examples_2()
+	// goroutines_examples_2()
+	channels_examples()
 }
