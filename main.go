@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-func maps_structs() {
+func maps_struct() {
 	type Human struct {
 		weight float32
 		height float32
@@ -197,8 +197,7 @@ func panic_examples() {
 			fmt.Println("Error", err)
 		}
 	}()
-	b := 1 / 0
-	fmt.Println(b)
+	panic("Panicked")
 }
 
 func pointer_examples() {
@@ -225,13 +224,118 @@ func pointer_examples() {
 	fmt.Println(x, *x, (*x).a, x.a)
 }
 
+func pass_by_value(text string) {
+	text = "New Value"
+}
+
+func pass_by_pointer(text *string) {
+	*text = "New Value"
+}
+
+func sum(msg string, values ...int) {
+	var sum int = 0
+	for _, v := range values {
+		sum += v
+	}
+	fmt.Println(msg, sum)
+}
+
+func return_pointer_sum(values ...int) *int {
+	var sum int = 0
+	for _, v := range values {
+		sum += v
+	}
+	return &sum
+}
+
+func return_divide(a float32, b float32) (float32, error) {
+	if b == 0.0 {
+		return 0.0, fmt.Errorf("Cannot divide by zero")
+	}
+	return a / b, nil
+}
+
+func function_examples() {
+	// Pass by value example
+	a := "Hello"
+	pass_by_value(a)
+	fmt.Println(a)
+
+	// Pass by pointers example
+	b := "Hello"
+	pass_by_pointer(&b)
+	fmt.Println(b)
+
+	sum("The sum is", 1, 2, 3, 4)
+
+	s := return_pointer_sum(1, 2, 3, 4, 5)
+	fmt.Println(*s)
+
+	r, err := return_divide(5.0, 1.0)
+	if err != nil {
+		fmt.Println("error occurred", err)
+		return
+	}
+	fmt.Println(r)
+
+	// anonymous function
+	d := func() {
+		fmt.Println("Anonymous function")
+	}
+	d()
+
+	// Anonymous function within a loop
+	for i := 0; i < 5; i++ {
+		func(i int) {
+			fmt.Println(i)
+		}(i)
+	}
+
+	divide()
+}
+
+// An example of function declaration in a variable
+func divide() {
+	var d func(a, b float64) (float64, error) = func(a, b float64) (float64, error) {
+		if b == 0.0 {
+			return 0.0, fmt.Errorf("Divide by zero error")
+		}
+		return a / b, nil
+	}
+
+	v, err := d(1, 2)
+	if err != nil {
+		fmt.Println("An error occurred", err)
+		return
+	}
+	fmt.Println(v)
+
+	g := greeter{
+		greeting: "Hello there",
+		name:     "Safwan",
+	}
+	g.greet()
+	fmt.Println(g.name)
+}
+
+type greeter struct {
+	greeting string
+	name     string
+}
+
+func (g *greeter) greet() {
+	fmt.Println(g.greeting, g.name)
+	g.name = "new name"
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
 	// switch_statements()
 	// loops()
-	// maps_structs()
+	// maps_struct()
 	// defer_examples()
 	// panic_examples()
-	pointer_examples()
+	// pointer_examples()
+	function_examples()
 }
