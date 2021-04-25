@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"sync"
 )
+
+var wg = sync.WaitGroup{}
 
 func maps_struct() {
 	type Human struct {
@@ -362,6 +365,45 @@ func interface_examples() {
 	}
 }
 
+func goroutines_examples_1() {
+	var msg = "Hello"
+	wg.Add(1)
+	go func(msg string) {
+		fmt.Println(msg)
+		wg.Done()
+	}(msg)
+	msg = "World"
+	wg.Wait()
+}
+
+var counter = 0
+var wg1 = sync.WaitGroup{}
+var m = sync.RWMutex{}
+
+func goroutines_examples_2() {
+	for i := 0; i < 10; i++ {
+		wg1.Add(2)
+		m.RLock()
+		go printer()
+		m.Lock()
+		go incrementer()
+	}
+
+	wg1.Wait()
+}
+
+func printer() {
+	fmt.Printf("Hello #%v\n", counter)
+	m.RUnlock()
+	wg1.Done()
+}
+
+func incrementer() {
+	counter++
+	m.Unlock()
+	wg1.Done()
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
@@ -372,5 +414,7 @@ func main() {
 	// panic_examples()
 	// pointer_examples()
 	// function_examples()
-	interface_examples()
+	// interface_examples()
+	// goroutines_examples_1()
+	goroutines_examples_2()
 }
