@@ -113,9 +113,73 @@ func switch_statements() {
 	}
 }
 
+func loops() {
+	for i := 0; i <= 5; i++ {
+		fmt.Println(i)
+	}
+
+	for i, j := 0, 0; i <= 5; i, j = i+1, j+1 {
+		fmt.Println(i, j)
+	}
+
+	i := 0
+	for ; i <= 5; i++ {
+		fmt.Println(i)
+	}
+
+	j := 0
+	for {
+		j++
+
+		if j == 2 {
+			continue
+		}
+
+		if j == 3 {
+			break
+		}
+		fmt.Println(j)
+	}
+
+	for i := 0; i <= 3; i++ {
+		for j := 0; j <= 3; j++ {
+			fmt.Println(i, j)
+		}
+	}
+
+	// Breakout with label
+Loop:
+	for i := 0; i <= 3; i++ {
+		for j := 0; j <= 3; j++ {
+			fmt.Println(i, j)
+			if j == 3 {
+				break Loop
+			}
+		}
+	}
+	fmt.Println("Breakout of nested loop")
+
+	// Range keyword
+	divisions := []string{"FEW", "BMW", "FLW", "LGW", "WW", "MW", "LHW", "HW"}
+	for k, v := range divisions {
+		fmt.Println(k, v)
+	}
+
+	// Looping over string
+	for k, v := range "Hello" {
+		fmt.Println(k, v)
+	}
+
+	// Looping over map
+	for k, v := range map[string]string{"a": "A", "b": "B"} {
+		fmt.Println(k, v)
+	}
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
-	switch_statements()
+	// switch_statements()
+	// loops()
 	// maps_structs()
 }
