@@ -41,7 +41,81 @@ func maps_structs() {
 	fmt.Println(field.Tag)
 }
 
+func if_else_statements_example1() {
+	type mma_record struct {
+		wins   uint8
+		losses uint8
+		nc     uint8
+	}
+
+	ufcFightersRecord := map[string]mma_record{
+		"Kamaru Usman":        mma_record{wins: 19, losses: 1, nc: 0},
+		"Khabib Nurmagomedov": mma_record{wins: 29, losses: 0, nc: 0},
+		"Isreal Adesanya":     mma_record{wins: 20, losses: 1, nc: 0},
+	}
+
+	if mma_record, ok := ufcFightersRecord["Kamaru Usman"]; ok {
+		fmt.Println(mma_record.wins)
+	}
+}
+
+func if_else_statements_example2() {
+	number := 20
+	guess := 21
+	if guess < 1 {
+		fmt.Println("Guess must be between 1 and 100")
+	} else if guess > 100 {
+		fmt.Println("Guess is greater than half of number")
+	} else {
+		if guess < number {
+			fmt.Println("guess is too low")
+		}
+		if guess > number {
+			fmt.Println("guess is too high")
+		}
+		if guess == number {
+			fmt.Println("Correct guess")
+		}
+	}
+}
+
+func switch_statements() {
+	switch i := 3 + 2; i {
+	case 1, 3, 5:
+		fmt.Println("odd")
+	case 2, 4, 6:
+		fmt.Println("even")
+	default:
+		fmt.Println("complex")
+	}
+
+	i := 10
+	switch {
+	case i <= 10:
+		fmt.Println("i is less than 10")
+		fallthrough
+	case i >= 11 && i <= 20:
+		fmt.Println("i is greater than 10 and less than 20")
+	default:
+		fmt.Println("i is greater than 20")
+	}
+
+	var s interface{} = [2]int{1, 2}
+	switch s.(type) {
+	case int:
+		fmt.Println("s is an int")
+	case float32:
+		fmt.Println("s is an float32")
+	case float64:
+		fmt.Println("s is an float64")
+	case [2]int:
+		fmt.Println("s is 2 length int array")
+	}
+}
+
 func main() {
-	if_else_statements()
+	// if_else_statements_example1()
+	// if_else_statements_example2()
+	switch_statements()
 	// maps_structs()
 }
