@@ -328,6 +328,40 @@ func (g *greeter) greet() {
 	g.name = "new name"
 }
 
+func (cw ConsoleWriter) Write(data []byte) (int, error) {
+	return fmt.Println(string(data))
+}
+
+type Writer interface {
+	Write([]byte) (int, error)
+}
+
+type ConsoleWriter struct{}
+
+type Incrementer interface {
+	Increment() int
+}
+
+type IntCounter int
+
+func (ic *IntCounter) Increment() int {
+	(*ic)++
+	return int(*ic)
+}
+
+func interface_examples() {
+	// struct interface example
+	var w Writer = ConsoleWriter{}
+	w.Write([]byte("Hello World"))
+
+	// int interface example
+	ic := IntCounter(0)
+	var inc Incrementer = &ic
+	for i := 0; i < 10; i++ {
+		fmt.Println(inc.Increment())
+	}
+}
+
 func main() {
 	// if_else_statements_example1()
 	// if_else_statements_example2()
@@ -337,5 +371,6 @@ func main() {
 	// defer_examples()
 	// panic_examples()
 	// pointer_examples()
-	function_examples()
+	// function_examples()
+	interface_examples()
 }
