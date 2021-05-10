@@ -15,4 +15,5 @@ func main() {
 	examples.Maps()
 	examples.Range()
 	examples.Functions()
+	examples.Closures()
 }
