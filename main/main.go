@@ -10,4 +10,5 @@ func main() {
 	examples.For()
 	examples.IfElse()
 	examples.Switch()
+	examples.Arrays()
 }
