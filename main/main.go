@@ -8,4 +8,6 @@ func main() {
 	examples.Variables()
 	examples.Constants()
 	examples.For()
+	examples.IfElse()
+	examples.Switch()
 }
