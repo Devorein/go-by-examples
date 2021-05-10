@@ -42,6 +42,7 @@ func Slices() {
 	slice := make([][]int, 5)
 
 	for i := range slice {
+		// length of inner slices are different every time
 		slice[i] = make([]int, i+1)
 		for j := range slice[i] {
 			slice[i][j] = j
