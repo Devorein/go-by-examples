@@ -14,4 +14,5 @@ func main() {
 	examples.Slices()
 	examples.Maps()
 	examples.Range()
+	examples.Functions()
 }
