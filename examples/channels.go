@@ -9,7 +9,7 @@ func Channels() {
 	messages := make(chan string)
 
 	go func() {
-		time.Sleep(2 * time.Second)
+		time.Sleep(time.Second)
 		messages <- "ping"
 	}()
 
