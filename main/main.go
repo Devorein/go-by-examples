@@ -37,5 +37,6 @@ func main() {
 	// examples.Timers()
 	// examples.Tickers()
 	// examples.WorkerPools()
-	examples.WaitGroups()
+	// examples.WaitGroups()
+	examples.RateLimiting()
 }
