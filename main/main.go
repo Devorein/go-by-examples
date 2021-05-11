@@ -22,4 +22,5 @@ func main() {
 	examples.Methods()
 	examples.Interfaces()
 	examples.Errors()
+	examples.Goroutines()
 }
