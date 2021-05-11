@@ -19,4 +19,5 @@ func main() {
 	examples.Recursions()
 	examples.Pointers()
 	examples.Struct()
+	examples.Methods()
 }
