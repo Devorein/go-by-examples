@@ -33,5 +33,6 @@ func main() {
 	// examples.ClosingChannels()
 	// examples.RangeOverChannels()
 	// examples.Timers()
-	examples.Tickers()
+	// examples.Tickers()
+	examples.WorkerPools()
 }
