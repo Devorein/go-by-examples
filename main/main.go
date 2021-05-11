@@ -1,6 +1,8 @@
 package main
 
-import "github.com/Devorein/go-by-examples/examples"
+import (
+	"github.com/Devorein/go-by-examples/examples"
+)
 
 func main() {
 	// examples.HelloWorld()
@@ -34,5 +36,6 @@ func main() {
 	// examples.RangeOverChannels()
 	// examples.Timers()
 	// examples.Tickers()
-	examples.WorkerPools()
+	// examples.WorkerPools()
+	examples.WaitGroups()
 }
