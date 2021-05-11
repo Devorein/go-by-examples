@@ -25,4 +25,5 @@ func main() {
 	examples.Goroutines()
 	examples.Channels()
 	examples.BufferedChannels()
+	examples.ChannelSync()
 }
