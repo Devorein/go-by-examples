@@ -31,5 +31,6 @@ func main() {
 	// examples.Timeouts()
 	// examples.NonBlockChannelOperations()
 	// examples.ClosingChannels()
-	examples.RangeOverChannels()
+	// examples.RangeOverChannels()
+	examples.Timers()
 }
