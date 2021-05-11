@@ -22,10 +22,11 @@ func main() {
 	examples.Methods()
 	examples.Interfaces()
 	examples.Errors()
-	examples.Goroutines()
-	examples.Channels()
+	// examples.Goroutines()
+	// examples.Channels()
 	// examples.BufferedChannels()
 	// examples.ChannelSync()
 	// examples.ChannelDirections()
 	// examples.MultiChannelSync()
+	examples.Timeouts()
 }
