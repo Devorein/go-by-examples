@@ -20,4 +20,5 @@ func main() {
 	examples.Pointers()
 	examples.Struct()
 	examples.Methods()
+	examples.Interfaces()
 }
