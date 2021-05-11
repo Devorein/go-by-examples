@@ -26,4 +26,5 @@ func main() {
 	examples.Channels()
 	examples.BufferedChannels()
 	examples.ChannelSync()
+	examples.ChannelDirections()
 }
