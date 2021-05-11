@@ -18,4 +18,5 @@ func main() {
 	examples.Closures()
 	examples.Recursions()
 	examples.Pointers()
+	examples.Struct()
 }
