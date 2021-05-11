@@ -24,7 +24,8 @@ func main() {
 	examples.Errors()
 	examples.Goroutines()
 	examples.Channels()
-	examples.BufferedChannels()
-	examples.ChannelSync()
-	examples.ChannelDirections()
+	// examples.BufferedChannels()
+	// examples.ChannelSync()
+	// examples.ChannelDirections()
+	// examples.MultiChannelSync()
 }
