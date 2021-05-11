@@ -20,6 +20,6 @@ func Goroutines() {
 		fmt.Println(msg)
 	}("going")
 
-	time.Sleep(time.Minute)
+	time.Sleep(time.Second)
 	fmt.Println("done")
 }
