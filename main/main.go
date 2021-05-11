@@ -28,5 +28,6 @@ func main() {
 	// examples.ChannelSync()
 	// examples.ChannelDirections()
 	// examples.MultiChannelSync()
-	examples.Timeouts()
+	// examples.Timeouts()
+	examples.NonBlockChannelOperations()
 }
