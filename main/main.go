@@ -46,5 +46,6 @@ func main() {
 	// examples.Panic()
 	// examples.Defer()
 	// examples.CollectionFunctions()
-	examples.StringFunctions()
+	// examples.StringFunctions()
+	examples.StringFormatting()
 }
