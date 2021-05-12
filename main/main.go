@@ -53,5 +53,6 @@ func main() {
 	// examples.Xml()
 	// examples.Time()
 	// examples.Epoch()
-	examples.TimeFormatingParsing()
+	// examples.TimeFormatingParsing()
+	examples.RandomNumbers()
 }
