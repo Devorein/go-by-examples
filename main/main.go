@@ -51,5 +51,6 @@ func main() {
 	// examples.RegularExpressions()
 	// examples.Json()
 	// examples.Xml()
-	examples.Time()
+	// examples.Time()
+	examples.Epoch()
 }

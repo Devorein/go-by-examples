@@ -35,5 +35,4 @@ func Time() {
 
 	p(then.Add(diff).Equal(now))
 	p(then.Add(-diff).Before(now))
-
 }
