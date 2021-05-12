@@ -47,5 +47,6 @@ func main() {
 	// examples.Defer()
 	// examples.CollectionFunctions()
 	// examples.StringFunctions()
-	examples.StringFormatting()
+	// examples.StringFormatting()
+	examples.RegularExpressions()
 }
