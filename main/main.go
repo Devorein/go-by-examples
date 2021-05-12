@@ -43,5 +43,6 @@ func main() {
 	// examples.Mutexes()
 	// examples.Sorting()
 	// examples.SortingByFunctions()
-	examples.Panic()
+	// examples.Panic()
+	examples.Defer()
 }
