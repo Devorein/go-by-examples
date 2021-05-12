@@ -58,5 +58,6 @@ func main() {
 	// examples.NumberParsing()
 	// examples.UrlParsing()
 	// examples.Sha1Hashes()
-	examples.Base64()
+	// examples.Base64()
+	examples.ReadingFiles()
 }
