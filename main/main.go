@@ -57,5 +57,6 @@ func main() {
 	// examples.RandomNumbers()
 	// examples.NumberParsing()
 	// examples.UrlParsing()
-	examples.Sha1Hashes()
+	// examples.Sha1Hashes()
+	examples.Base64()
 }
