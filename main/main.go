@@ -61,5 +61,6 @@ func main() {
 	// examples.Base64()
 	// examples.ReadingFiles()
 	// examples.WritingFiles()
-	examples.LineFilters()
+	// examples.LineFilters()
+	examples.FilePaths()
 }
