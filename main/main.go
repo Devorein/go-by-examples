@@ -44,5 +44,6 @@ func main() {
 	// examples.Sorting()
 	// examples.SortingByFunctions()
 	// examples.Panic()
-	examples.Defer()
+	// examples.Defer()
+	examples.CollectionFunctions()
 }
