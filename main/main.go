@@ -39,5 +39,7 @@ func main() {
 	// examples.WorkerPools()
 	// examples.WaitGroups()
 	// examples.RateLimiting()
-	examples.AtomicCounters()
+	// examples.AtomicCounters()
+	// examples.Mutexes()
+	examples.Sorting()
 }
