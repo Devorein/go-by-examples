@@ -38,5 +38,6 @@ func main() {
 	// examples.Tickers()
 	// examples.WorkerPools()
 	// examples.WaitGroups()
-	examples.RateLimiting()
+	// examples.RateLimiting()
+	examples.AtomicCounters()
 }

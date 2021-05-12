@@ -1,3 +1,9 @@
+// [_Rate limiting_](http://en.wikipedia.org/wiki/Rate_limiting)
+// is an important mechanism for controlling resource
+// utilization and maintaining quality of service. Go
+// elegantly supports rate limiting with goroutines,
+// channels, and [tickers](tickers).
+
 package examples
 
 import (
@@ -7,37 +13,37 @@ import (
 
 func RateLimiting() {
 	requests := make(chan int, 5)
-	for i := 0; i < 5; i++ {
+
+	for i := 1; i <= 5; i++ {
 		requests <- i
 	}
 	close(requests)
-	ticker := time.NewTicker(200 * time.Millisecond)
+	limiter := time.NewTicker(200 * time.Millisecond)
 
 	for req := range requests {
-		<-ticker.C
+		<-limiter.C
 		fmt.Println(req)
 	}
 
-	burstLimiter := make(chan time.Time, 3)
-
-	for i := 0; i < 3; i++ {
-		burstLimiter <- time.Now()
+	burstyLimiter := make(chan time.Time, 3)
+	for i := 1; i <= 3; i++ {
+		burstyLimiter <- time.Now()
 	}
 
 	go func() {
-		for t := range time.Tick(time.Second) {
-			burstLimiter <- t
+		for t := range time.Tick(200 * time.Millisecond) {
+			burstyLimiter <- t
 		}
 	}()
 
-	burstRequests := make(chan int, 5)
-	for i := 0; i < 5; i++ {
-		burstRequests <- i
-	}
-	close(burstRequests)
+	burstyRequests := make(chan int, 5)
 
-	for r := range burstRequests {
-		<-burstLimiter
-		fmt.Println("request", r, time.Now())
+	for i := 1; i <= 5; i++ {
+		burstyRequests <- i
+	}
+	close(burstyRequests)
+
+	for req := range burstyRequests {
+		fmt.Println(req, <-burstyLimiter)
 	}
 }
