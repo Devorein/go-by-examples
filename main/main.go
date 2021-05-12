@@ -42,5 +42,6 @@ func main() {
 	// examples.AtomicCounters()
 	// examples.Mutexes()
 	// examples.Sorting()
-	examples.SortingByFunctions()
+	// examples.SortingByFunctions()
+	examples.Panic()
 }
