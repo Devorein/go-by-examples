@@ -41,5 +41,6 @@ func main() {
 	// examples.RateLimiting()
 	// examples.AtomicCounters()
 	// examples.Mutexes()
-	examples.Sorting()
+	// examples.Sorting()
+	examples.SortingByFunctions()
 }
