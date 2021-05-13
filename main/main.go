@@ -74,5 +74,6 @@ func main() {
 	// examples.HttpServers()
 	// examples.Context()
 	// examples.SpawningProcesses()
-	examples.ExecingProcesses()
+	// examples.ExecingProcesses()
+	examples.Signals()
 }
