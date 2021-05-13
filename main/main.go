@@ -66,5 +66,6 @@ func main() {
 	// examples.Directories()
 	// examples.TemporaryDirectories()
 	// examples.Testing()
-	examples.CommandLineArguments()
+	// examples.CommandLineArguments()
+	examples.CommandLineFlags()
 }
