@@ -62,5 +62,6 @@ func main() {
 	// examples.ReadingFiles()
 	// examples.WritingFiles()
 	// examples.LineFilters()
-	examples.FilePaths()
+	// examples.FilePaths()
+	examples.Directories()
 }
