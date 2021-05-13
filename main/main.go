@@ -73,5 +73,6 @@ func main() {
 	// examples.HttpClients()
 	// examples.HttpServers()
 	// examples.Context()
-	examples.SpawningProcesses()
+	// examples.SpawningProcesses()
+	examples.ExecingProcesses()
 }
