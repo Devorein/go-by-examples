@@ -64,5 +64,6 @@ func main() {
 	// examples.LineFilters()
 	// examples.FilePaths()
 	// examples.Directories()
-	examples.TemporaryDirectories()
+	// examples.TemporaryDirectories()
+	examples.Testing()
 }
