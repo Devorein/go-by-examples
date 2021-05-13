@@ -75,5 +75,6 @@ func main() {
 	// examples.Context()
 	// examples.SpawningProcesses()
 	// examples.ExecingProcesses()
-	examples.Signals()
+	// examples.Signals()
+	examples.Exit()
 }
