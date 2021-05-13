@@ -72,5 +72,6 @@ func main() {
 	// examples.EnvironmentVariables()
 	// examples.HttpClients()
 	// examples.HttpServers()
-	examples.Context()
+	// examples.Context()
+	examples.SpawningProcesses()
 }
