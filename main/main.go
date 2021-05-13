@@ -71,5 +71,6 @@ func main() {
 	// examples.CommandLineSubcommands()
 	// examples.EnvironmentVariables()
 	// examples.HttpClients()
-	examples.HttpServers()
+	// examples.HttpServers()
+	examples.Context()
 }
