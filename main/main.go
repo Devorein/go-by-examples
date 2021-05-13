@@ -69,5 +69,6 @@ func main() {
 	// examples.CommandLineArguments()
 	// examples.CommandLineFlags()
 	// examples.CommandLineSubcommands()
-	examples.EnvironmentVariables()
+	// examples.EnvironmentVariables()
+	examples.HttpClients()
 }
